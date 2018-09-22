@@ -1,0 +1,26 @@
+.nav{
+  width: 100%;
+  margin: 0;
+  padding: 0;;
+}
+.nav ul{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.nav ul li{
+  list-style: none;
+  padding: 20px;
+  white-space: pre;
+}
+.nav ul li a{
+  text-decoration: none!important;
+}
+
+.langNav{
+  height:3em;
+  width: 7em;
+  text-align-last: center;
+}
