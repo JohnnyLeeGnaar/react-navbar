@@ -9,11 +9,12 @@
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
+  white-space: pre;
 }
 .nav ul li{
   list-style: none;
   padding: 20px;
-  white-space: pre;
+ 
 }
 .nav ul li a{
   text-decoration: none!important;

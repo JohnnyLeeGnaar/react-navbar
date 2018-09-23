@@ -12,37 +12,23 @@ class Navigation extends Component {
 
     render() {
 
-            const navHr =
-                
-               [
-                    "Ljepota i VI",
-                    "Kuhanje na zdrav način",
-                    "Kampiranje na otvorenom",
-                    "Aktivirajte se",
-                    "Meditacija",
-                    "2 + 2 = 3",
-                    "Za filmofile i knjigoljupce",
-                    "Jučer danas sutra"
-                ];
-                /*
-                const navLang = [
-                  {  navHr: "Ljepota i VI Kuhanje na zdrav način Kampiranje na otvorenom Aktivirajte se Meditacija 2 + 2 = 3 Za filmofile i knjigoljupce Jučer danas sutra"},
-                  {  navEn: "Beauty and You Healthy Cooking Outdoor Camping Activate Meditation 2 + 2 = 3 Cinephiles and BookLovers Corner Yesterday Today Tomorrow"}
-                ]
-                */
-                const navHrUpperSplit = function(props){
-                    
-                    let nav = props.toUpperCase();
-                        nav = nav.split(" ")
-                        .map(nav => nav.length>3 && nav!="" ? nav+="\n" : nav+=" ");
-                        
-                    
+            
+                const navHrUpperSplit = function(props){                
+                    let nav = props.toUpperCase().split(" ")
+                    .map(nav => nav.length>3 && nav!=="" ? nav+="\n" : nav+=" ");  
                     return nav;
                 }
-            //const upperBarHr = this.props.navHr.map(navHrUpperSplit);
-            const test = this.props.navHr;
-            const barHr = navHr.map(nav => (
-                <NavLink link to="/"><li>{nav}</li></NavLink>
+                let langBar;
+                if(this.props.navLang === "navHr"){
+             langBar = this.props.navHr;
+                }
+                else{
+             langBar = this.props.navEn;
+                }
+           
+            const upperBarHr = langBar.map(navHrUpperSplit);
+            const barHr = upperBarHr.map((nav, index) => (
+                <NavLink key={index} link to="/"><li>{nav}</li></NavLink>
             ));
 
                     return ( 
@@ -53,13 +39,11 @@ class Navigation extends Component {
                             <FontAwesomeIcon className="waffle" icon="stroopwafel" />
                         </div> 
                         <select className="langNav" onChange = {this.props.handleChange.bind(this)}>
-                        <option value ="hr">Hrvatski</option> 
-                        <option value ="en">Engleski</option> 
+                        <option value ="navHr">Hrvatski</option> 
+                        <option value ="navEn">English</option> 
                         </select> 
-                            {console.log(this.props.navLang)}
-                            {console.log(this.props.navHr)}
                         </ul> 
-                             
+                        {console.log(langBar)}
                         </div>
                             
                             

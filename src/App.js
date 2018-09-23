@@ -7,8 +7,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      navLang: "hr",
-      navHr: ["Ljepota i VI Kuhanje na zdrav način Kampiranje na otvorenom Aktivirajte se Meditacija 2 + 2 = 3 Za filmofile i knjigoljupce Jučer danas sutra"],
+      navLang: "navHr",
+      navHr: ["Ljepota i VI ", "Kuhanje na zdrav način", "Kampiranje na otvorenom", "Aktivirajte se", "Meditacija"," 2 + 2 = 3", "Za filmofile i knjigoljupce", "Jučer danas sutra"],
+      navEn: ["Beauty and You", "Healthy Cooking", "Outdoor Camping", "Activate", "Meditation", "2 + 2 = 3", "Cinephiles and BookLovers Corner", "Yesterday Today Tomorrow"],
       globalWidth: window.innerWidth
     };
     this.handleChange = this.handleChange.bind(this);
@@ -39,6 +40,7 @@ class App extends Component {
               navLang={this.state.navLang}
               handleChange={this.handleChange}
               navHr={this.state.navHr}
+              navEn={this.state.navEn}
             />
       </BrowserRouter>
         <span>{this.state.globalWidth}</span>
@@ -48,15 +50,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*class HelloWorld extends Component {
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.value });
-  }
-  render() {
-    return (
-      <input onChange={this.handleChange('name')}/>
-      <input onChange={this.handleChange('description')}/>
-    )
-  }
-}*/
